@@ -1,23 +1,47 @@
-import axios from "axios";
-const API_URL = "/api/issues";
-const getIssues = async () => {
-    const response = await axios.get(API_URL);
-    return response.data;
+// IssueService.js
+import axios from 'axios';
+import API_BASE_URL from './config';
+
+const IssueService = {
+    getIssues: async () => {
+        try {
+            const response = await axios.get(`${API_BASE_URL}/api/issues`);
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching issues:', error);
+            throw error;
+        }
+    },
+
+    createIssue: async (issue) => {
+        try {
+            const response = await axios.post(`${API_BASE_URL}/api/issues`, issue);
+            return response.data;
+        } catch (error) {
+            console.error('Error creating issue:', error);
+            throw error;
+        }
+    },
+
+    updateIssue: async (id, updates) => {
+        try {
+            const response = await axios.put(`${API_BASE_URL}/api/issues/${id}`, updates);
+            return response.data;
+        } catch (error) {
+            console.error('Error updating issue:', error);
+            throw error;
+        }
+    },
+
+    deleteIssue: async (id) => {
+        try {
+            const response = await axios.delete(`${API_BASE_URL}/api/issues/${id}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error deleting issue:', error);
+            throw error;
+        }
+    }
 };
-const getIssue = async (id) => {
-    const response = await axios.get(`${API_URL}/${id}`);
-    return response.data;
-};
-const createIssue = async (issue) => {
-    const response = await axios.post(API_URL, issue);
-    return response.data;
-};
-const updateIssue = async (id, issue) => {
-    const response = await axios.put(`${API_URL}/${id}`, issue);
-    return response.data;
-};
-const deleteIssue = async (id) => {
-    const response = await axios.delete(`${API_URL}/${id}`);
-    return response.data;
-};
-export default { getIssues, getIssue, createIssue, updateIssue, deleteIssue };
+
+export default IssueService;

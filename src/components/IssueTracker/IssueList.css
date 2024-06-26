@@ -1,0 +1,17 @@
+.issue-list {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.issue-list h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.issue-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}

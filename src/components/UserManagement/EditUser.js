@@ -1,58 +1,45 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "./EditUser.css";
-const EditUser = ({ userId, onUserUpdated }) => {
-    const [user, setUser] = useState(null);
-    useEffect(() => {
-        fetchUser();
-    }, [userId]);
-    const fetchUser = async () => {
+import React, { useState } from 'react';
+import axios from 'axios';
+import './EditUser.css';
+
+const EditUser = () => {
+    const [userId, setUserId] = useState('');
+    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
+
+    const handleEditUser = async () => {
         try {
-            const response = await axios.get(`/api/users/${userId}`);
-            setUser(response.data);
+            const response = await axios.put(`/api/users/${userId}`, { username, email });
+            console.log('User updated:', response.data);
         } catch (error) {
-            console.error("Error fetching user:", error);
+            console.error('Error updating user:', error);
         }
     };
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setUser((prevUser) => ({ ...prevUser, [name]: value }));
-    };
-    const handleUpdateUser = async () => {
-        try {
-            const response = await axios.put(`/api/users/${userId}`, user);
-            onUserUpdated(response.data);
-        } catch (error) {
-            console.error("Error updating user:", error);
-        }
-    };
-    if (!user) return null;
+
     return (
         <div className="edit-user">
-            {" "}
-            <h2>Edit User</h2>{" "}
+            <h2>Edit User</h2>
             <input
                 type="text"
-                name="name"
-                value={user.name}
-                onChange={handleInputChange}
-                placeholder="Name"
-            />{" "}
+                value={userId}
+                onChange={(e) => setUserId(e.target.value)}
+                placeholder="User ID"
+            />
+            <input
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Username"
+            />
             <input
                 type="email"
-                name="email"
-                value={user.email}
-                onChange={handleInputChange}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email"
-            />{" "}
-            <select name="role" value={user.role} onChange={handleInputChange}>
-                {" "}
-                <option value="admin">Admin</option>{" "}
-                <option value="developer">Developer</option>{" "}
-                <option value="viewer">Viewer</option>{" "}
-            </select>{" "}
-            <button onClick={handleUpdateUser}>Update User</button>{" "}
+            />
+            <button onClick={handleEditUser}>Update User</button>
         </div>
     );
 };
+
 export default EditUser;

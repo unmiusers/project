@@ -1,0 +1,18 @@
+.branch-info {
+    padding: 10px;
+}
+
+.branch-info h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.branch-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.branch-info li {
+    padding: 5px 0;
+    border-bottom: 1px solid #ddd;
+}

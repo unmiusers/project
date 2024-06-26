@@ -1,0 +1,12 @@
+.query-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.query-page h1 {
+    margin-bottom: 20px;
+}
+
+.create-query, .saved-queries, .query-results {
+    margin-bottom: 20px;
+}

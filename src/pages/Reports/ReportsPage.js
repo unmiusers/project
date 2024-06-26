@@ -1,11 +1,16 @@
 import React from 'react';
-import Reports from '../components/Reports/ReportsPage';
 import './ReportsPage.css';
+import IssueReport from '../../components/Reports/IssueReport';
+import ProgressReport from '../../components/Reports/ProgressReport';
+import ExportReport from '../../components/Reports/ExportReport';
 
 const ReportsPage = () => {
     return (
         <div className="reports-page">
-            <Reports />
+            <h1 className="reports-title">Reports</h1>
+            <IssueReport />
+            <ProgressReport />
+            <ExportReport />
         </div>
     );
 };

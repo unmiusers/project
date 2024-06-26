@@ -1,0 +1,33 @@
+.edit-wiki {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.edit-wiki h2 {
+    margin-bottom: 20px;
+}
+
+.edit-wiki textarea {
+    display: block;
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.edit-wiki button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-wiki button:hover {
+    background-color: #0056b3;
+}

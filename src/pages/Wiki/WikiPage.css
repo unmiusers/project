@@ -1,0 +1,12 @@
+.wiki-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.wiki-page h1 {
+    margin-bottom: 20px;
+}
+
+.wiki-content {
+    margin-bottom: 20px;
+}

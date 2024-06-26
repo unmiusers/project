@@ -1,0 +1,42 @@
+.wiki-tags {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.wiki-tags h2 {
+    margin-bottom: 20px;
+}
+
+.wiki-tags ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.wiki-tags ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.wiki-tags input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.wiki-tags button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.wiki-tags button:hover {
+    background-color: #0056b3;
+}

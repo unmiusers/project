@@ -1,0 +1,24 @@
+.saved-queries {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.saved-queries h2 {
+    margin-bottom: 20px;
+}
+
+.saved-queries ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.saved-queries ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.saved-queries ul li p {
+    margin: 0;
+}

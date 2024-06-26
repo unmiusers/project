@@ -1,5 +1,5 @@
 import React from 'react';
-import IssueList from '../components/IssueTracker/IssueList';
+import IssueList from '../../components/IssueTracker/IssueList';
 import './IssuePage.css';
 
 const IssuePage = () => {
