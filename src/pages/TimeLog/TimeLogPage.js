@@ -1,11 +1,16 @@
 import React from 'react';
-import TimeLog from '../components/TimeLog/TimeLogPage';
 import './TimeLogPage.css';
+import TimeLogEntry from '../../components/TimeLog/TimeLogEntry';
+import TimeLogReport from '../../components/TimeLog/TimeLogReport';
+import TimeVisualization from '../../components/TimeLog/TimeVisualization';
 
 const TimeLogPage = () => {
     return (
-        <div className="timelog-page">
-            <TimeLog />
+        <div className="time-log-page">
+            <h1 className="time-log-title">Time Logs</h1>
+            <TimeLogEntry />
+            <TimeLogReport />
+            <TimeVisualization />
         </div>
     );
 };

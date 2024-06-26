@@ -1,11 +1,16 @@
 import React from 'react';
-import UserManagement from '../components/UserManagement/UserPage';
+import UserList from '../../components/UserManagement/UserList';
+import UserLoginHistory from '../../components/UserManagement/UserLoginHistory';
+import EditUser from '../../components/UserManagement/EditUser';
 import './UserPage.css';
 
 const UserPage = () => {
     return (
         <div className="user-page">
-            <UserManagement />
+            <h1>User Management</h1>
+            <UserList />
+            <UserLoginHistory />
+            <EditUser />
         </div>
     );
 };

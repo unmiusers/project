@@ -1,0 +1,17 @@
+.gantt-chart-view {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.gantt-task {
+    margin-bottom: 10px;
+}
+
+.task-name {
+    font-weight: bold;
+}
+
+.task-duration {
+    margin-left: 10px;
+    color: gray;
+}

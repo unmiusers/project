@@ -1,23 +1,46 @@
-import axios from "axios";
-const API_URL = "/api/wiki";
-const getPages = async () => {
-    const response = await axios.get(`${API_URL}/pages`);
-    return response.data;
+// WikiService.js
+import axios from 'axios';
+
+const WikiService = {
+    getWikiPages: async () => {
+        try {
+            const response = await axios.get('/api/wiki');
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching Wiki pages:', error);
+            throw error;
+        }
+    },
+
+    createWikiPage: async (page) => {
+        try {
+            const response = await axios.post('/api/wiki', page);
+            return response.data;
+        } catch (error) {
+            console.error('Error creating Wiki page:', error);
+            throw error;
+        }
+    },
+
+    updateWikiPage: async (id, updates) => {
+        try {
+            const response = await axios.put(`/api/wiki/${id}`, updates);
+            return response.data;
+        } catch (error) {
+            console.error('Error updating Wiki page:', error);
+            throw error;
+        }
+    },
+
+    deleteWikiPage: async (id) => {
+        try {
+            const response = await axios.delete(`/api/wiki/${id}`);
+            return response.data;
+        } catch (error) {
+            console.error('Error deleting Wiki page:', error);
+            throw error;
+        }
+    }
 };
-const getPage = async (id) => {
-    const response = await axios.get(`${API_URL}/pages/${id}`);
-    return response.data;
-};
-const createPage = async (page) => {
-    const response = await axios.post(`${API_URL}/pages`, page);
-    return response.data;
-};
-const updatePage = async (id, page) => {
-    const response = await axios.put(`${API_URL}/pages/${id}`, page);
-    return response.data;
-};
-const deletePage = async (id) => {
-    const response = await axios.delete(`${API_URL}/pages/${id}`);
-    return response.data;
-};
-export default { getPages, getPage, createPage, updatePage, deletePage };
+
+export default WikiService;

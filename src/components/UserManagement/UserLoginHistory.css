@@ -1,0 +1,24 @@
+.user-login-history {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.user-login-history h2 {
+    margin-bottom: 20px;
+}
+
+.user-login-history ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-login-history ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.user-login-history ul li p {
+    margin: 0;
+}

@@ -1,7 +1,16 @@
-import axios from "axios";
-const API_URL = "/api/gantt";
-const getTasks = async () => {
-    const response = await axios.get(`${API_URL}/tasks`);
-    return response.data;
+// GanttService.js
+import axios from 'axios';
+
+const GanttService = {
+    getGanttData: async () => {
+        try {
+            const response = await axios.get('/api/gantt');
+            return response.data;
+        } catch (error) {
+            console.error('Error fetching Gantt data:', error);
+            throw error;
+        }
+    }
 };
-export default { getTasks };
+
+export default GanttService;

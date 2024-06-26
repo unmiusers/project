@@ -1,0 +1,18 @@
+.gantt-page {
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.gantt-title {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.gantt-chart-view {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+}

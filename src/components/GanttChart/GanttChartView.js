@@ -1,25 +1,25 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
-import Timeline from "./Timeline";
-import "./GanttChartView.css";
-const GanttChartView = () => {
-    const [tasks, setTasks] = useState([]);
-    useEffect(() => {
-        fetchTasks();
-    }, []);
-    const fetchTasks = async () => {
-        try {
-            const response = await axios.get("/api/gantt/tasks");
-            setTasks(response.data);
-        } catch (error) {
-            console.error("Error fetching tasks:", error);
-        }
-    };
+import React from 'react';
+import './GanttChartView.css';
+
+const GanttChartView = ({ tasks = [] }) => {
+    if (!Array.isArray(tasks)) {
+        return <div>No tasks available</div>;
+    }
+
     return (
-        <div className="gantt-chart">
-            {" "}
-            <h2>Gantt Chart</h2> {/* 甘特图可视化实现 */} <Timeline tasks={tasks} />{" "}
+        <div className="gantt-chart-view">
+            <h3>Gantt Chart View</h3>
+            {/* 自定义的甘特图展示逻辑 */}
+            {tasks.map((task) => (
+                <div key={task.id} className="gantt-task">
+                    <span className="task-name">{task.name}</span>
+                    <span className="task-duration">
+                        {task.start} - {task.end}
+                    </span>
+                </div>
+            ))}
         </div>
     );
 };
+
 export default GanttChartView;

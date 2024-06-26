@@ -1,0 +1,9 @@
+.issue-labels {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.issue-labels h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}

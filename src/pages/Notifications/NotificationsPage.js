@@ -1,11 +1,14 @@
 import React from 'react';
-import Notifications from '../components/Notifications/NotificationsPage';
 import './NotificationsPage.css';
+import EmailNotifications from '../../components/Notifications/EmailNotifications';
+import NotificationList from '../../components/Notifications/NotificationList';
 
 const NotificationsPage = () => {
     return (
         <div className="notifications-page">
-            <Notifications />
+            <h1 className="notifications-title">Notifications</h1>
+            <EmailNotifications />
+            <NotificationList />
         </div>
     );
 };

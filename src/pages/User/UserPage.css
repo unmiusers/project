@@ -1,0 +1,12 @@
+.user-page {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.user-page h1 {
+    margin-bottom: 20px;
+}
+
+.user-list, .user-login-history, .edit-user {
+    margin-bottom: 20px;
+}

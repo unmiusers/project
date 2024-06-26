@@ -1,11 +1,35 @@
-// services/auth/authService.jsimport axios from 'axios';
-const API_BASE_URL = "/api/auth";
-const login = async (credentials) => {
-    const response = await axios.post(`${API_BASE_URL}/login`, credentials);
-    return response.data;
+import axios from 'axios';
+
+const AuthService = {
+    login: async (credentials) => {
+        try {
+            const response = await axios.post('/api/auth/login', credentials);
+            return response.data;
+        } catch (error) {
+            console.error('Error logging in:', error);
+            throw error;
+        }
+    },
+
+    register: async (userInfo) => {
+        try {
+            const response = await axios.post('/api/auth/register', userInfo);
+            return response.data;
+        } catch (error) {
+            console.error('Error registering:', error);
+            throw error;
+        }
+    },
+
+    logout: async () => {
+        try {
+            const response = await axios.post('/api/auth/logout');
+            return response.data;
+        } catch (error) {
+            console.error('Error logging out:', error);
+            throw error;
+        }
+    }
 };
-const register = async (userData) => {
-    const response = await axios.post(`${API_BASE_URL}/register`, userData);
-    return response.data;
-};
-export default { login, register };
+
+export default AuthService;

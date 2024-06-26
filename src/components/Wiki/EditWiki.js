@@ -1,37 +1,30 @@
-import React, { useState } from "react";
-import axios from "axios";
-import "./EditWiki.css";
-const EditWiki = ({ page, onSave }) => {
-    const [title, setTitle] = useState(page ? page.title : "");
-    const [content, setContent] = useState(page ? page.content : "");
+import React, { useState } from 'react';
+import axios from 'axios';
+import './EditWiki.css';
+
+const EditWiki = () => {
+    const [content, setContent] = useState('');
+
     const handleSave = async () => {
         try {
-            const response = await axios.put(`/api/wiki/pages/${page.id}`, {
-                title,
-                content,
-            });
-            onSave(response.data);
+            const response = await axios.post('/api/wiki/save', { content });
+            console.log('Wiki content saved:', response.data);
         } catch (error) {
-            console.error("Error saving wiki page:", error);
+            console.error('Error saving wiki content:', error);
         }
     };
+
     return (
-        <div className="wiki-editor">
-            {" "}
-            <h2>Edit Wiki Page</h2>{" "}
-            <input
-                type="text"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                placeholder="Title"
-            />{" "}
+        <div className="edit-wiki">
+            <h2>Edit Wiki</h2>
             <textarea
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                placeholder="Content"
-            ></textarea>{" "}
-            <button onClick={handleSave}>Save</button>{" "}
+                placeholder="Edit wiki content here..."
+            />
+            <button onClick={handleSave}>Save</button>
         </div>
     );
 };
+
 export default EditWiki;

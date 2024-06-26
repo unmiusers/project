@@ -1,0 +1,15 @@
+.code-diff {
+    padding: 10px;
+}
+
+.code-diff h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.code-diff pre {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
